@@ -8,10 +8,10 @@ namespace SortConsoleApp
         static void Main(string[] args)
         {
             //int[] arr = { 78, 55, 45, 98, 13 };
-            int[] arr = Misc.GenerateRandomIntArray(800, 0, 100000);
-            var BubbleSort = Sorts.BubbleSort(arr);
-            Console.WriteLine($"The bubble sort took {BubbleSort.Item2} milliseconds");
-            foreach (int i in arr)
+            int[] arr = Misc.GenerateRandomIntArray(8000000, 0, 100000);
+            var sorted = Sorts.InsertionSort(arr);
+            Console.WriteLine($"{sorted.Item2} ms");
+            foreach (int i in sorted.Item1)
             {
                 Console.Write(i + " ");
             }
