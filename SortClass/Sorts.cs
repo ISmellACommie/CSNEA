@@ -1,11 +1,10 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace SortClass
 {
     public class Sorts
     {
-        public static (int[], long) BubbleSort(int[] arr)
+        public static (int[], long) BubbleSort(int[] arr) // uses "Tuples" to return 2 items (array of sorted values and time taken in ms)
         {
             Stopwatch sw = new();
             sw.Start();
