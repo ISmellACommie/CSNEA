@@ -1,7 +1,7 @@
-﻿using System;
-using static SortClass.Sorts;
+﻿using static SortClass.Sorts;
 using static SortClass.Misc;
 using static System.Console;
+using static System.Environment;
 
 namespace SortConsoleApp
 {
@@ -47,7 +47,7 @@ namespace SortConsoleApp
                             isInMenu = !isInMenu;
                             WriteLine("\nPress any key to exit.");
                             ReadKey(true);
-                            Environment.Exit(0);
+                            Exit(0);
                             break;
                         }
                 }
