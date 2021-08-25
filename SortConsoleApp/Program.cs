@@ -29,24 +29,24 @@ namespace SortConsoleApp
                     case 0:
                         {
                             PrintArray(BubbleSort(arr).Item1, BubbleSort(arr).Item2);
-                            Console.WriteLine("\nPress any key to return to the menu.");
-                            Console.ReadKey(true);
-                            Console.Clear();
+                            WriteLine("\nPress any key to return to the menu.");
+                            ReadKey(true);
+                            Clear();
                             break;
                         }
                     case 1:
                         {
                             PrintArray(InsertionSort(arr).Item1, InsertionSort(arr).Item2);
-                            Console.WriteLine("\nPress any key to return to the menu.");
-                            Console.ReadKey(true);
-                            Console.Clear();
+                            WriteLine("\nPress any key to return to the menu.");
+                            ReadKey(true);
+                            Clear();
                             break;
                         }
                     case 2:
                         {
                             isInMenu = !isInMenu;
-                            Console.WriteLine("\nPress any key to exit.");
-                            Console.ReadKey(true);
+                            WriteLine("\nPress any key to exit.");
+                            ReadKey(true);
                             Environment.Exit(0);
                             break;
                         }
