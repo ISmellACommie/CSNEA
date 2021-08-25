@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace SortClass
 {
@@ -19,10 +20,17 @@ namespace SortClass
 
         public static void PrintArray(int[] arr, long timeTaken)
         {
-            Console.WriteLine($"The sort took {timeTaken} ms to complete.");
+            WriteLine($"The sort took {timeTaken} ms to complete.");
             foreach (int i in arr)
             {
-                Console.Write($"[{i}]");
+                if (i == arr.Length - 1)
+                {
+                    Write($"[{i}]");
+                }
+                else
+                {
+                    Write($"[{i}] ");
+                }
             }
         }
 
@@ -32,8 +40,8 @@ namespace SortClass
             ConsoleKey keyPressed;
             do
             {
-                Console.Clear();
-                Console.WriteLine(prompt);
+                Clear();
+                WriteLine(prompt);
 
                 for (int i = 0; i < options.Length; i++)
                 {
@@ -43,21 +51,21 @@ namespace SortClass
                     if (i == selectedIndex)
                     {
                         prefix = "=>";
-                        Console.ForegroundColor = ConsoleColor.Black;
-                        Console.BackgroundColor = ConsoleColor.White;
+                        ForegroundColor = ConsoleColor.Black;
+                        BackgroundColor = ConsoleColor.White;
                     }
                     else
                     {
                         prefix = " ";
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.BackgroundColor = ConsoleColor.Black;
+                        ForegroundColor = ConsoleColor.White;
+                        BackgroundColor = ConsoleColor.Black;
                     }
 
-                    Console.WriteLine($"{prefix} <<{currentOption}>>");
+                    WriteLine($"{prefix} <<{currentOption}>>");
                 }
-                Console.ResetColor();
+                ResetColor();
 
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                ConsoleKeyInfo keyInfo = ReadKey(true);
                 keyPressed = keyInfo.Key;
 
                 // Update selectedIndex based on arrow keys.

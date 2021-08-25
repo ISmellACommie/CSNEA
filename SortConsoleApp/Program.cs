@@ -1,55 +1,50 @@
 ﻿using System;
-using SortClass;
+using static SortClass.Sorts;
+using static SortClass.Misc;
+using static System.Console;
 
 namespace SortConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            //int[] arr = { 78, 55, 45, 98, 13 };
-            /*int[] arr = Misc.GenerateRandomIntArray(100, 0, 100);
-            var sorted = Sorts.InsertionSort(arr);
-            Console.WriteLine($"{sorted.Item2} ms");
-            foreach (int i in sorted.Item1)
-            {
-                Console.Write(i + " ");
-            }
-            Console.ReadKey();*/
-
             int[] arr = { 78, 55, 45, 98, 13 };
             //int[] arr = Misc.GenerateRandomIntArray(100, 0, 100);
             bool isInMenu = true;
-            while (isInMenu == true)
+            string prompt = @"
+   _____ _                                                      _   _             
+  / ____| |                                                    | | (_)            
+ | |    | |__   ___   ___  ___  ___    __ _ _ __     ___  _ __ | |_ _  ___  _ __  
+ | |    | '_ \ / _ \ / _ \/ __|/ _ \  / _` | '_ \   / _ \| '_ \| __| |/ _ \| '_ \ 
+ | |____| | | | (_) | (_) \__ \  __/ | (_| | | | | | (_) | |_) | |_| | (_) | | | |
+  \_____|_| |_|\___/ \___/|___/\___|  \__,_|_| |_|  \___/| .__/ \__|_|\___/|_| |_|
+                                                         | |                      
+                                                         |_|                      ";
+            string[] options = { "Bubble Sort", "Insertion Sort", "Exit" };
+            while (isInMenu)
             {
-                string prompt = "Menu";
-                string[] options = { "Bubble Sort", "Insertion Sort", "Exit" };
-                int selectedIndex = Misc.CreateMenu(prompt, options);
-                switch (selectedIndex)
+                switch (CreateMenu(prompt, options))
                 {
                     case 0:
                         {
-                            var sort = Sorts.BubbleSort(arr);
-                            Misc.PrintArray(sort.Item1, sort.Item2);
+                            PrintArray(BubbleSort(arr).Item1, BubbleSort(arr).Item2);
                             Console.WriteLine("\nPress any key to return to the menu.");
                             Console.ReadKey(true);
                             Console.Clear();
-                            isInMenu = false;
                             break;
                         }
                     case 1:
                         {
-                            var sort = Sorts.InsertionSort(arr);
-                            Misc.PrintArray(sort.Item1, sort.Item2);
+                            PrintArray(InsertionSort(arr).Item1, InsertionSort(arr).Item2);
                             Console.WriteLine("\nPress any key to return to the menu.");
                             Console.ReadKey(true);
                             Console.Clear();
-                            isInMenu = false;
                             break;
                         }
                     case 2:
                         {
-                            isInMenu = false;
+                            isInMenu = !isInMenu;
                             Console.WriteLine("\nPress any key to exit.");
                             Console.ReadKey(true);
                             Environment.Exit(0);
