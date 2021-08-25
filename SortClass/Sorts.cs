@@ -37,18 +37,18 @@ namespace SortClass
             sw.Start();
 
             // Begin sort
-            for (int j = 1; j < arr.Length; j++)
+            for (int i = 1; i < arr.Length; i++)
             {
-                int nextElement = arr[j];
-                int i = j - 1;
-                while (i >= 0 && arr[i] > nextElement)
-                {
-                    arr[j] = arr[i];
-                    i -= 1;
-                }
-                arr[i + 1] = nextElement;
-            }
+                int currentNumber = arr[i];
+                int previousIndex = i - 1;
 
+                while (previousIndex >= 0 && arr[previousIndex] > currentNumber)
+                {
+                    arr[previousIndex + 1] = arr[previousIndex];
+                    previousIndex -= 1;
+                }
+                arr[previousIndex + 1] = currentNumber;
+            }
 
             // Stop stopwatch
             sw.Stop();
