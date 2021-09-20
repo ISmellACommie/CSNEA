@@ -10,7 +10,7 @@ namespace SortConsoleApp
         static void Main()
         {
             int[] arr = { 78, 55, 45, 98, 13 };
-            //int[] arr = Misc.GenerateRandomIntArray(100, 0, 100);
+            //int[] arr = GenerateRandomIntArray(100, 0, 100);
             bool isInMenu = true;
             string prompt = @"
    _____ _                                                      _   _             
