@@ -5,8 +5,9 @@ namespace SortClass
     public class Sorts
     {
         static readonly Stopwatch sw = new();
+        public static long stopWatchTime;
 
-        public static (int[], long) BubbleSort(int[] arr) // uses "Tuples" to return 2 items (array of sorted values and time taken in ms)
+        public static int[] BubbleSort(int[] arr)
         {
             // Start stopwatch
             sw.Start();
@@ -27,11 +28,12 @@ namespace SortClass
 
             // Stop stopwatch
             sw.Stop();
+            stopWatchTime = sw.ElapsedMilliseconds;
 
-            return (arr, sw.ElapsedMilliseconds);
+            return arr;
         }
 
-        public static (int[], long) InsertionSort(int[] arr)
+        public static int[] InsertionSort(int[] arr)
         {
             // Start stopwatch
             sw.Start();
@@ -52,8 +54,9 @@ namespace SortClass
 
             // Stop stopwatch
             sw.Stop();
+            stopWatchTime = sw.ElapsedMilliseconds;
 
-            return (arr, sw.ElapsedMilliseconds);
+            return arr;
         }
     }
 }

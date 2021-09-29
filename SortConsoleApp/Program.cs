@@ -9,8 +9,8 @@ namespace SortConsoleApp
     {
         static void Main()
         {
-            int[] arr = { 78, 55, 45, 98, 13 };
-            //int[] arr = GenerateRandomIntArray(100, 0, 100);
+            //int[] arr = { 78, 55, 45, 98, 13 };
+            int[] arr = GenerateRandomIntArray(10000, 0, 100);
             bool isInMenu = true;
             string prompt = @"
    _____ _                                                      _   _             
@@ -28,7 +28,7 @@ namespace SortConsoleApp
                 {
                     case 0:
                         {
-                            PrintArray(BubbleSort(arr).Item1, BubbleSort(arr).Item2);
+                            PrintArray(BubbleSort(arr), stopWatchTime);
                             WriteLine("\nPress any key to return to the menu.");
                             ReadKey(true);
                             Clear();
@@ -36,7 +36,7 @@ namespace SortConsoleApp
                         }
                     case 1:
                         {
-                            PrintArray(InsertionSort(arr).Item1, InsertionSort(arr).Item2);
+                            PrintArray(InsertionSort(arr), stopWatchTime);
                             WriteLine("\nPress any key to return to the menu.");
                             ReadKey(true);
                             Clear();
