@@ -45,8 +45,6 @@ namespace SortConsoleApp
                     case 2:
                         {
                             isInMenu = !isInMenu;
-                            WriteLine("\nPress any key to exit.");
-                            ReadKey(true);
                             Exit(0);
                             break;
                         }
